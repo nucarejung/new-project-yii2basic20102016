@@ -38,6 +38,10 @@ AppAsset::register($this);
                     'class' => 'navbar-inverse',
                 ],
             ]);
+            $setting=[
+                ['label' => '<span class="glyphicon glyphicon-home"></span> การตั้งค่า', 'url' => ['/comtype/index']],
+                
+            ];
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'encodeLabels' => false,
@@ -46,6 +50,7 @@ AppAsset::register($this);
                         ['label' => '<span class="glyphicon glyphicon-user"></span> เกี่ยวกับ', 'url' => ['/site/about']],
                         ['label' => '<span class="glyphicon glyphicon-earphone"></span> ติดต่อ', 'url' => ['/site/contact']],
                         ['label' => '<span class="glyphicon glyphicon-earphone"></span> ทดสอบ', 'url' => ['/first1/index']],
+                    ['label' => '<span class="glyphicon glyphicon-earphone"></span> การทำระบบ', 'items' =>$setting],
                     Yii::$app->user->isGuest ? (
                                 ['label' => 'Login', 'url' => ['/site/login']]
                             ) : (
